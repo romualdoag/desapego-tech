@@ -55,7 +55,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Lente Pancake 14-42mm", "Alça", "Bateria", "Carregador"],
     condition: "Adquirido novo. OBS: Não acompanha cartão de memória.",
-    price: "R$ 4.500",
+    price: "R$ 5.200",
     folder: "olympus_em10_mark_iv",
     images: ["IMG_2491.JPEG", "IMG_2492.JPEG", "IMG_2493.JPEG", "IMG_2494.JPEG", "IMG_2495.JPEG", "IMG_2496.JPEG"]
   },
