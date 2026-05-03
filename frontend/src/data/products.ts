@@ -124,7 +124,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Smart Case", "Cabo USB-C"],
     condition: "Adquirido novo.",
-    price: "R$ 3.300",
+    price: "R$ 2.800",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
   }
