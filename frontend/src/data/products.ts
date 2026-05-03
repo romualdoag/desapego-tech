@@ -74,7 +74,7 @@ export const products: Product[] = [
     condition: "Adquirido novo.",
     price: "R$ 1.100",
     folder: "airpods_pro_2",
-    images: ["IMG_0236.JPEG", "IMG_0237.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"]
+    images: ["IMG_0237.JPEG", "IMG_0236.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"]
   },
   {
     id: "google-chromecast",
@@ -93,7 +93,7 @@ export const products: Product[] = [
     condition: "Adquirido novo.",
     price: "A definir",
     folder: "google_chromecast",
-    images: ["IMG_0240.JPEG", "IMG_0241.JPEG", "IMG_0242.JPEG", "IMG_0243.JPEG", "IMG_0244.JPEG"]
+    images: ["IMG_0243.JPEG", "IMG_0240.JPEG", "IMG_0241.JPEG", "IMG_0242.JPEG", "IMG_0244.JPEG"]
   },
   {
     id: "dell-dockstation-wd19",
