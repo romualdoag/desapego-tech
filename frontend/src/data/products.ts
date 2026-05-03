@@ -122,7 +122,7 @@ export const products: Product[] = [
       "Áudio Espacial com rastreamento dinâmico",
       "Até 20 horas de bateria"
     ],
-    includedItems: ["Smart Case", "Cabo USB-C"],
+    includedItems: ["Caixa", "Smart Case", "Cabo USB-C"],
     condition: "Adquirido novo.",
     price: "R$ 2.800",
     folder: "airpods_max",
