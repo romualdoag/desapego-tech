@@ -29,16 +29,16 @@ export const products: Product[] = [
   {
     id: "mac-mini-m4",
     name: "Mac Mini M4",
-    description: "Computador desktop ultra-compacto e potente.",
+    description: "Computador desktop ultra-compacto e potente. Disponível em duas configurações: apenas o Mac Mini ou kit completo com Dock Ugreen e expansão de SSD.",
     specs: [
       "Chip M4 (10 CPUs / 10 GPUs)",
       "Memória RAM: 16GB",
       "Armazenamento: 512GB Interno",
-      "Expansão: +512GB no Dock Ugreen (Total 1TB)"
+      "Opcional: +512GB no Dock Ugreen (Total 1TB)"
     ],
-    includedItems: ["Cabo de energia", "Dock Ugreen com SSD 512GB"],
+    includedItems: ["Cabo de energia", "Opcional: Dock Ugreen com SSD 512GB"],
     condition: "Adquirido novo.",
-    price: "R$ 8.500",
+    price: "R$ 8.200 (ou R$ 9.000 com Dock)",
     folder: "mac_mini_m4",
     images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG", "IMG_2015.JPEG", "IMG_2016.JPEG", "IMG_2017.JPEG", "IMG_2018.JPEG"]
   },
