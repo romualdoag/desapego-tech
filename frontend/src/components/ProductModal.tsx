@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import type { Product } from '../data/products';
-import { X, ChevronLeft, ChevronRight, CheckCircle2, Info, Camera } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, CheckCircle2, Info, Camera, MessageCircle } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -15,6 +15,17 @@ interface ProductModalProps {
 
 export const ProductModal = ({ product, onClose }: ProductModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Encoded phone number to avoid simple scraping
+  // +5527998114153 -> Base64
+  const encodedPhone = "NTUyNzk5ODExNDE1Mw==";
+
+  const handleWhatsAppContact = () => {
+    if (!product) return;
+    const phone = atob(encodedPhone);
+    const message = encodeURIComponent(`Olá! Tenho interesse no ${product.name} do seu catálogo.`);
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  };
 
   useEffect(() => {
     if (product) {
@@ -116,7 +127,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
             {product.description}
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-8 flex-1">
             <div>
               <h4 className="flex items-center text-sm font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-4">
                 <Info size={16} className="mr-2" /> Especificações
@@ -153,6 +164,16 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+            <button
+              onClick={handleWhatsAppContact}
+              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-green-900/20 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <MessageCircle size={20} />
+              Tenho Interesse via WhatsApp
+            </button>
           </div>
         </div>
       </div>
