@@ -18,7 +18,7 @@ export const products: Product[] = [
     specs: [
       "Capacidade: 256GB",
       "Saúde da Bateria: 81%",
-      "Cor: Titânio (Natural/Black/White/Blue - a confirmar pelas fotos)"
+      "Cor: Titânio Azul"
     ],
     includedItems: ["Caixa original", "Cabo USB-C"],
     condition: "Adquirido novo, único dono.",

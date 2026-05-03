@@ -51,7 +51,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
           {product.images.length > 0 ? (
             <>
               <img 
-                src={`/images/${product.folder}/${product.images[currentImageIndex]}`} 
+                src={`${import.meta.env.BASE_URL}images/${product.folder}/${product.images[currentImageIndex]}`} 
                 alt={`${product.name} view ${currentImageIndex + 1}`}
                 className="w-full h-full object-contain select-none transition-opacity duration-300"
               />

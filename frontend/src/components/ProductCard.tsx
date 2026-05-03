@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
   const mainImage = product.images.length > 0 
-    ? `/images/${product.folder}/${product.images[0]}`
+    ? `${import.meta.env.BASE_URL}images/${product.folder}/${product.images[0]}`
     : null;
 
   return (
