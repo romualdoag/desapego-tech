@@ -45,38 +45,44 @@ export const products: Product[] = [
   {
     id: "olympus-em10-mark-iv",
     name: "Olympus E-M10 Mark IV",
-    description: "Câmera Mirrorless compacta e versátil.",
+    description: "Câmera Mirrorless compacta e leve, ideal para viagens e fotografia do dia a dia. Possui sensor de 20MP e estabilização de 5 eixos no corpo.",
     specs: [
-      "Sensor Micro Four Thirds",
-      "Estabilização no corpo"
+      "Sensor Live MOS de 20MP",
+      "Estabilização de imagem de 5 eixos no corpo",
+      "Gravação de vídeo em 4K",
+      "Tela touch articulável para selfies",
+      "Inclui Lente Pancake 14-42mm"
     ],
-    includedItems: ["Alça", "Bateria", "Carregador"],
+    includedItems: ["Lente Pancake 14-42mm", "Alça", "Bateria", "Carregador"],
     condition: "Adquirido novo. OBS: Não acompanha cartão de memória.",
-    price: "A definir",
+    price: "R$ 5.700",
     folder: "olympus_em10_mark_iv",
     images: ["IMG_2491.JPEG", "IMG_2492.JPEG", "IMG_2493.JPEG", "IMG_2494.JPEG", "IMG_2495.JPEG", "IMG_2496.JPEG"]
   },
   {
     id: "airpods-pro-2",
-    name: "AirPods Pro (2ª Geração)",
-    description: "Fones de ouvido com cancelamento de ruído ativo.",
+    name: "AirPods Pro (2ª Geração) USB-C",
+    description: "Fones de ouvido premium com cancelamento de ruído ativo avançado e áudio espacial personalizado.",
     specs: [
-      "Áudio Espacial",
-      "Resistência a suor e água"
+      "Chip H2",
+      "Cancelamento Ativo de Ruído (ANC) 2x mais potente",
+      "Modo Transparência Adaptável",
+      "Áudio Espacial com rastreamento dinâmico",
+      "Estojo MagSafe (USB-C) com alto-falante para busca"
     ],
-    includedItems: ["Caixa original", "Cabo (nunca usado)"],
+    includedItems: ["Caixa original", "Cabo USB-C (nunca usado)"],
     condition: "Adquirido novo.",
-    price: "A definir",
+    price: "R$ 1.100",
     folder: "airpods_pro_2",
     images: ["IMG_0236.JPEG", "IMG_0237.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"]
   },
   {
     id: "google-chromecast",
     name: "Google Chromecast",
-    description: "Dispositivo de streaming para TV.",
+    description: "Dispositivo de streaming para TV com Google TV integrado.",
     specs: [
       "Suporte a 4K HDR",
-      "Google TV"
+      "Google TV com controle remoto por voz"
     ],
     includedItems: [
       "Caixa original",
@@ -92,28 +98,33 @@ export const products: Product[] = [
   {
     id: "dell-dockstation-wd19",
     name: "Dell Dock Station WD19",
-    description: "Estação de acoplamento para notebooks.",
+    description: "Estação de acoplamento USB-C versátil projetada para aumentar a produtividade com múltiplas opções de conectividade.",
     specs: [
       "Conexão USB-C",
-      "Suporte a múltiplos monitores"
+      "Suporte para até dois monitores Full HD ou um monitor 4K",
+      "Múltiplas portas USB",
+      "Porta Gigabit Ethernet"
     ],
-    includedItems: ["Fonte de 180W"],
+    includedItems: ["Fonte original Dell de 180W"],
     condition: "Adquirido novo.",
-    price: "A definir",
+    price: "R$ 550",
     folder: "dell_dockstation_wd19",
     images: ["IMG_2209.JPEG", "IMG_2210.JPEG", "IMG_2211.JPEG", "IMG_2212.JPEG", "IMG_2213.JPEG", "IMG_2214.JPEG", "IMG_2215.JPEG"]
   },
   {
     id: "airpods-max",
-    name: "AirPods Max",
-    description: "Fones de ouvido Over-ear premium da Apple.",
+    name: "AirPods Max (USB-C)",
+    description: "Fones de ouvido Over-ear premium da Apple com áudio de alta fidelidade e design icônico, agora com carregamento USB-C.",
     specs: [
-      "Cancelamento de Ruído Ativo",
-      "Modo Transparência"
+      "Driver dinâmico projetado pela Apple",
+      "Cancelamento Ativo de Ruído",
+      "Modo Transparência",
+      "Áudio Espacial com rastreamento dinâmico",
+      "Até 20 horas de bateria"
     ],
-    includedItems: ["Smart Case", "Cabo Lightning para USB-C"],
-    condition: "Adquirido novo.",
-    price: "A definir",
+    includedItems: ["Smart Case", "Cabo USB-C"],
+    condition: "Adquirido novo (Cor: Midnight - a confirmar pelas fotos).",
+    price: "R$ 3.700",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
   }
