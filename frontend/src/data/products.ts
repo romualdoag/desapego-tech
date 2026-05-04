@@ -26,7 +26,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Todos os componentes montados e testados"],
     condition: "Adquirido novo. Todos os componentes novos, montados e funcionando.",
-    price: "Sob consulta",
+    price: "R$ 16.500",
     folder: "desktop_ultra_7",
     images: ["cpu.jpg", "gpu.jpg", "motherboard.jpg", "ram.jpg", "ssd.jpg", "watercooler.jpg", "psu.jpg"]
   },
