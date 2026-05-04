@@ -53,7 +53,7 @@ function App() {
             Catálogo de Desapegos
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Todos os produtos foram adquiridos novos e possuem as particularidades detalhadas em cada item. Valores sob consulta.
+            Curadoria exclusiva de eletrônicos de alto padrão. Todos os itens foram adquiridos novos, possuem procedência garantida e detalhes técnicos preservados.
           </p>
         </div>
 
