@@ -132,5 +132,23 @@ export const products: Product[] = [
     price: "R$ 2.800",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
+  },
+  {
+    id: "macbook-air-m4-24gb",
+    name: "MacBook Air M4 (24GB RAM)",
+    description: "Performance extrema em design ultra-portátil. Upgrade raro de 24GB de RAM, ideal para IA e fluxos profissionais.",
+    specs: [
+      "Chip M4 (Lançamento 2025)",
+      "Memória RAM: 24GB (Upgrade)",
+      "Armazenamento: 512GB SSD",
+      "Cor: Meia-Noite (Midnight)",
+      "Garantia Apple até 30/11/2026",
+      "Teclado Americano (ANSI)"
+    ],
+    includedItems: ["Carregador original (Padrão US)", "Cabo USB-C original", "Capa TPU Rígida", "Bolsa de transporte"],
+    condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
+    price: "R$ 9.500",
+    folder: "macbook_air_m4_24gb",
+    images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg"]
   }
 ];
