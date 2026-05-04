@@ -86,7 +86,7 @@ export const products: Product[] = [
   {
     id: "airpods-max",
     name: "AirPods Max (USB-C)",
-    description: "Fones de ouvido Over-ear premium da Apple com áudio de alta fidelidade. Cor Meia-Noite (Midnight).",
+    description: "Fones de ouvido Over-ear premium da Apple com áudio de alta fidelidade. Cor Meia-Noite (Midnight). Disponíveis 2 unidades idênticas.",
     specs: [
       "Driver dinâmico projetado pela Apple",
       "Cancelamento Ativo de Ruído",
