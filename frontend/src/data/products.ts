@@ -31,12 +31,14 @@ export const products: Product[] = [
   {
     id: "macbook-air-m4-24gb",
     name: "MacBook Air M4 (24GB RAM)",
-    description: "Performance extrema em design ultra-portátil. Upgrade raro de 24GB de RAM, ideal para IA e fluxos profissionais.",
+    description: "Performance extrema em design ultra-portátil. Upgrade raro de 24GB de RAM, ideal para IA e fluxos profissionais. Bateria com saúde de 100% e apenas 14 ciclos.",
     specs: [
       "Chip M4 (Lançamento 2025)",
       "Memória RAM: 24GB (Upgrade)",
       "Armazenamento: 512GB SSD",
+      "Tela Liquid Retina 13,6\" (2560 x 1664)",
       "Cor: Meia-Noite (Midnight)",
+      "Saúde da Bateria: 100% (apenas 14 ciclos)",
       "Garantia Apple até 30/11/2026",
       "Teclado Americano (ANSI)"
     ],
@@ -44,7 +46,7 @@ export const products: Product[] = [
     condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
     price: "R$ 8.000",
     folder: "macbook_air_m4_24gb",
-    images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg"]
+    images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"]
   },
   {
     id: "olympus-em10-mark-iv",
@@ -69,10 +71,11 @@ export const products: Product[] = [
     description: "Smartphone Apple potente com excelente conjunto de câmeras. Modelo Americano (exclusivo eSIM).",
     specs: [
       "Capacidade: 256GB",
-      "Saúde da Bateria: 81%",
+      "Saúde da Bateria: 81% (423 ciclos)",
       "Cor: Titânio Azul",
       "Modelo: Americano (MU663LL/A - Apenas eSIM)",
-      "Tela Super Retina XDR de 6.7\""
+      "Tela Super Retina XDR de 6.7\"",
+      "Fabricado: dezembro de 2023 / Primeiro uso: abril de 2024"
     ],
     includedItems: ["Caixa original", "Cabo USB-C original"],
     condition: "Adquirido novo, único dono. Corpo e tela em estado impecável.",
@@ -133,10 +136,10 @@ export const products: Product[] = [
   },
   {
     id: "google-chromecast",
-    name: "Google Chromecast 4K",
-    description: "Dispositivo de streaming para TV com Google TV integrado. Modelo Snow (Branco).",
+    name: "Google Chromecast HD",
+    description: "Dispositivo de streaming para TV com Google TV integrado. Modelo Snow (Branco) com resolução Full HD 1080p.",
     specs: [
-      "Suporte a 4K HDR",
+      "Suporte a Full HD 1080p / HDR",
       "Google TV com controle remoto por voz",
       "Controle com atalhos para YouTube e Netflix"
     ],
