@@ -22,7 +22,7 @@
             position: relative;
             overflow: hidden;
             display: grid;
-            grid-template-rows: 400px 1fr 400px; /* Rigid structure */
+            grid-template-rows: 280px 1fr 320px; /* Reduced header and footer space */
         }
         .glow {
             position: absolute;
@@ -51,7 +51,7 @@
             box-shadow: inset 0 0 40px rgba(255,255,255,0.02);
         }
         .product-image {
-            width: 280px;
+            width: 320px; /* Increased size */
             aspect-ratio: 1;
             border-radius: 40px;
             object-fit: cover;
@@ -62,13 +62,13 @@
             color: #60a5fa;
             font-weight: 900;
             font-style: italic;
-            font-size: 42px;
+            font-size: 46px; /* Increased size */
             letter-spacing: -0.02em;
         }
         .product-name {
             color: white;
             font-weight: 700;
-            font-size: 34px;
+            font-size: 36px; /* Increased size */
             margin-bottom: 8px;
             line-height: 1.1;
         }
@@ -85,26 +85,27 @@
         <div class="glow top-[-200px] left-[-200px]"></div>
         <div class="glow bottom-[-200px] right-[-200px]"></div>
 
-        <!-- Header -->
-        <div class="relative z-10 flex flex-col items-center justify-end pb-12">
-            <h1 class="text-[120px] font-extrabold text-white leading-[0.85] tracking-tighter text-center">
-                Desapegos <br> <span class="text-blue-500">do Mumu</span>
+        <!-- Header - More Compact & Higher -->
+        <div class="relative z-10 flex flex-col items-center justify-center pt-10">
+            <h1 class="text-[80px] font-extrabold text-white leading-[1] tracking-tighter text-center">
+                Desapegos <span class="text-blue-500">do Mumu</span>
             </h1>
+            <div class="mt-4 h-1 w-20 bg-blue-500/50 rounded-full"></div>
         </div>
 
-        <!-- Product Grid (All items in grid style) -->
+        <!-- Product Grid - Larger cards due to saved space -->
         <div class="relative z-10 product-grid">
             
-            <!-- MacBook Air (Emphasis) -->
+            <!-- MacBook Air -->
             <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="product-image scale-110">
+                <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="product-image">
                 <h3 class="product-name">MacBook Air M4</h3>
                 <p class="price-tag">R$ 8.000</p>
             </div>
 
-            <!-- iPhone 15 Pro Max (Emphasis) -->
+            <!-- iPhone 15 Pro Max -->
             <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/iphone_15_pro_max_256/IMG_0235.JPEG" class="product-image scale-110">
+                <img src="https://romualdoag.github.io/desapego-tech/images/iphone_15_pro_max_256/IMG_0235.JPEG" class="product-image">
                 <h3 class="product-name">iPhone 15 PM</h3>
                 <p class="price-tag">R$ 4.900</p>
             </div>
@@ -138,13 +139,13 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="relative z-10 flex flex-col items-center justify-start pt-16 px-16">
-            <p class="text-4xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-10">
+        <!-- Footer - Tighter -->
+        <div class="relative z-10 flex flex-col items-center justify-start pt-10 px-16">
+            <p class="text-3xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-8">
                 👇 Clique abaixo 👇
             </p>
-            <div class="h-32 w-full border-2 border-dashed border-white/20 rounded-[40px] flex items-center justify-center bg-white/5">
-                <span class="text-white/10 text-4xl font-bold uppercase tracking-widest text-center px-4">Link Widget</span>
+            <div class="h-28 w-full border-2 border-dashed border-white/20 rounded-[40px] flex items-center justify-center bg-white/5">
+                <span class="text-white/10 text-3xl font-bold uppercase tracking-widest text-center px-4">Link Widget</span>
             </div>
         </div>
     </div>
