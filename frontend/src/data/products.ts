@@ -147,7 +147,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Carregador original (Padrão US)", "Cabo USB-C original", "Capa TPU Rígida", "Bolsa de transporte"],
     condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
-    price: "R$ 9.500",
+    price: "R$ 8.400",
     folder: "macbook_air_m4_24gb",
     images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg"]
   }
