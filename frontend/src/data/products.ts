@@ -12,6 +12,25 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    id: "desktop-ultra-7",
+    name: "Desktop Intel Core Ultra 7 265K",
+    description: "PC Desktop de alta performance montado com componentes de última geração. CPU Arrow Lake, GPU RTX 5060 Ti 16GB e 64GB DDR5.",
+    specs: [
+      "CPU: Intel Core Ultra 7 265K (Arrow Lake)",
+      "GPU: GIGABYTE GeForce RTX 5060 Ti GAMING OC 16GB",
+      "RAM: 64GB DDR5 Corsair Vengeance 6400MT/s (2x32GB)",
+      "SSD: Samsung 990 PRO 1TB NVMe Gen4",
+      "Placa-Mãe: Gigabyte Z890 AORUS Elite WIFI7",
+      "Refrigeração: Thermalright FW 240 SE ARGB (Watercooler 240mm)",
+      "Fonte: Rise Mode Zeus 850W Modular 80+ PFC Ativo"
+    ],
+    includedItems: ["Todos os componentes montados e testados"],
+    condition: "Adquirido novo. Todos os componentes novos, montados e funcionando.",
+    price: "Sob consulta",
+    folder: "desktop_ultra_7",
+    images: ["cpu.jpg", "gpu.jpg", "motherboard.jpg", "ram.jpg", "ssd.jpg", "watercooler.jpg", "psu.jpg"]
+  },
+  {
     id: "mac-mini-m4",
     name: "Mac Mini M4",
     description: "Computador desktop ultra-compacto e potente. Disponível em duas configurações: apenas o Mac Mini ou kit completo com Dock Ugreen e expansão de SSD.",
