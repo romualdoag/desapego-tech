@@ -24,7 +24,7 @@ function App() {
                 <ShoppingBag className="text-white" size={24} />
               </div>
               <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400">
-                Desapego Tech
+                Desapego Tech — Do Mumu
               </h1>
             </div>
 
@@ -47,13 +47,13 @@ function App() {
         <div className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6 border border-blue-100 dark:border-blue-800/30">
             <Sparkles size={16} />
-            <span>Itens selecionados e bem cuidados</span>
+            <span>Curadoria exclusiva do Mumu</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">
-            Catálogo de Desapegos
+            Desapegos do Mumu
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Curadoria exclusiva de eletrônicos de alto padrão. Todos os itens foram adquiridos novos, possuem procedência garantida e detalhes técnicos preservados.
+            Uma seleção de eletrônicos de alto padrão e procedência garantida. Todos os itens são de uso pessoal, adquiridos novos e extremamente bem cuidados.
           </p>
         </div>
 
