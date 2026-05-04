@@ -10,6 +10,11 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: #09090b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
         .story-canvas {
             width: 1080px;
@@ -17,116 +22,96 @@
             background: linear-gradient(180deg, #09090b 0%, #18181b 100%);
             position: relative;
             overflow: hidden;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            padding: 40px;
-        }
-        .product-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 32px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .product-image {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 20px;
-            object-fit: cover;
-            margin-bottom: 16px;
+            flex-shrink: 0;
         }
         .glow {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(0,0,0,0) 70%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
             z-index: 0;
         }
     </style>
 </head>
-<body class="flex items-center justify-center p-10">
+<body>
 
     <div id="story" class="story-canvas shadow-2xl flex flex-col">
         <!-- Background Elements -->
-        <div class="glow top-[-100px] left-[-100px]"></div>
-        <div class="glow bottom-[-100px] right-[-100px]"></div>
+        <div class="glow top-[-200px] left-[-200px]"></div>
+        <div class="glow bottom-[-200px] right-[-200px]"></div>
 
         <!-- Header -->
-        <div class="relative z-10 pt-32 px-16 text-center">
-            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-2xl mb-8">
-                ✨ CURADORIA PREMIUM
+        <div class="relative z-10 pt-28 px-16 text-center">
+            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-2xl mb-8 uppercase tracking-widest">
+                ✨ Curadoria Premium
             </div>
-            <h1 class="text-8xl font-extrabold text-white mb-4 tracking-tight">
+            <h1 class="text-[100px] font-extrabold text-white leading-[0.9] mb-6 tracking-tighter">
                 Desapegos <br> <span class="text-blue-500">do Mumu</span>
             </h1>
-            <p class="text-3xl text-zinc-400 font-medium max-w-2xl mx-auto">
-                Eletrônicos impecáveis com procedência garantida e preços especiais.
+            <p class="text-3xl text-zinc-400 font-medium max-w-2xl mx-auto leading-relaxed">
+                Eletrônicos impecáveis com procedência <br> garantida e preços especiais.
             </p>
         </div>
 
         <!-- Product List -->
-        <div class="relative z-10 flex-1 px-12 py-12 flex flex-col justify-center gap-6">
-            <!-- Row 1 -->
-            <div class="flex gap-8 h-80">
-                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8">
-                    <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="h-64 aspect-square rounded-[32px] object-cover shadow-2xl">
+        <div class="relative z-10 flex-1 px-12 py-10 flex flex-col justify-center gap-8">
+            
+            <!-- Mac Mini (Price Updated to Include Dock) -->
+            <div class="flex gap-8 h-[280px]">
+                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8 shadow-inner">
+                    <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="h-48 aspect-square rounded-[32px] object-cover shadow-2xl">
                     <div class="flex flex-col justify-center">
-                        <h3 class="text-4xl font-bold text-white mb-2">Mac Mini M4</h3>
-                        <p class="text-3xl text-blue-400 font-extrabold italic">R$ 8.200</p>
+                        <h3 class="text-4xl font-bold text-white mb-2">Mac Mini M4 + Dock</h3>
+                        <p class="text-5xl text-blue-400 font-extrabold italic tracking-tight">R$ 9.000</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2 -->
-            <div class="flex gap-8 h-80">
-                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8">
-                    <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="h-64 aspect-square rounded-[32px] object-cover shadow-2xl">
+            <!-- MacBook Air -->
+            <div class="flex gap-8 h-[280px]">
+                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8 shadow-inner">
+                    <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="h-48 aspect-square rounded-[32px] object-cover shadow-2xl">
                     <div class="flex flex-col justify-center">
                         <h3 class="text-4xl font-bold text-white mb-2">MacBook Air M4</h3>
-                        <p class="text-3xl text-blue-400 font-extrabold italic">R$ 8.000</p>
+                        <p class="text-5xl text-blue-400 font-extrabold italic tracking-tight">R$ 8.000</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 3 -->
-            <div class="flex gap-8 h-80">
-                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8">
-                    <img src="https://romualdoag.github.io/desapego-tech/images/iphone_15_pro_max_256/IMG_0235.JPEG" class="h-64 aspect-square rounded-[32px] object-cover shadow-2xl">
+            <!-- iPhone -->
+            <div class="flex gap-8 h-[280px]">
+                <div class="flex-1 bg-white/5 border border-white/10 rounded-[48px] p-8 flex items-center gap-8 shadow-inner">
+                    <img src="https://romualdoag.github.io/desapego-tech/images/iphone_15_pro_max_256/IMG_0235.JPEG" class="h-48 aspect-square rounded-[32px] object-cover shadow-2xl">
                     <div class="flex flex-col justify-center">
                         <h3 class="text-4xl font-bold text-white mb-2">iPhone 15 Pro Max</h3>
-                        <p class="text-3xl text-blue-400 font-extrabold italic">R$ 4.900</p>
+                        <p class="text-5xl text-blue-400 font-extrabold italic tracking-tight">R$ 4.900</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Grid for smaller items -->
+            <!-- Small Items Grid -->
             <div class="grid grid-cols-2 gap-8">
-                <div class="bg-white/5 border border-white/10 rounded-[48px] p-8 flex flex-col items-center text-center">
-                    <img src="https://romualdoag.github.io/desapego-tech/images/airpods_max/IMG_2480.JPEG" class="w-full aspect-square rounded-[32px] object-cover mb-6">
-                    <h3 class="text-3xl font-bold text-white mb-2 line-clamp-1">AirPods Max</h3>
-                    <p class="text-3xl text-blue-400 font-extrabold italic">R$ 2.800</p>
+                <div class="bg-white/5 border border-white/10 rounded-[48px] p-8 flex flex-col items-center text-center shadow-inner">
+                    <img src="https://romualdoag.github.io/desapego-tech/images/airpods_max/IMG_2480.JPEG" class="w-full aspect-square rounded-[32px] object-cover mb-6 shadow-xl">
+                    <h3 class="text-3xl font-bold text-white mb-2">AirPods Max</h3>
+                    <p class="text-4xl text-blue-400 font-extrabold italic">R$ 2.800</p>
                 </div>
-                <div class="bg-white/5 border border-white/10 rounded-[48px] p-8 flex flex-col items-center text-center">
-                    <img src="https://romualdoag.github.io/desapego-tech/images/airpods_pro_2/IMG_0237.JPEG" class="w-full aspect-square rounded-[32px] object-cover mb-6">
-                    <h3 class="text-3xl font-bold text-white mb-2 line-clamp-1">AirPods Pro 2</h3>
-                    <p class="text-3xl text-blue-400 font-extrabold italic">R$ 900</p>
+                <div class="bg-white/5 border border-white/10 rounded-[48px] p-8 flex flex-col items-center text-center shadow-inner">
+                    <img src="https://romualdoag.github.io/desapego-tech/images/airpods_pro_2/IMG_0237.JPEG" class="w-full aspect-square rounded-[32px] object-cover mb-6 shadow-xl">
+                    <h3 class="text-3xl font-bold text-white mb-2">AirPods Pro 2</h3>
+                    <p class="text-4xl text-blue-400 font-extrabold italic">R$ 900</p>
                 </div>
             </div>
         </div>
 
-        <!-- Footer / Widget Area -->
-        <div class="relative z-10 pt-12 pb-32 px-16 text-center bg-gradient-to-t from-black to-transparent">
-            <p class="text-3xl text-zinc-500 font-bold uppercase tracking-[0.2em] mb-12">
-                👇 Clique abaixo para o catálogo 👇
+        <!-- Footer / Link Area -->
+        <div class="relative z-10 pt-8 pb-32 px-16 text-center bg-gradient-to-t from-black to-transparent">
+            <p class="text-3xl text-zinc-500 font-bold uppercase tracking-[0.3em] mb-12">
+                👇 Acesse o catálogo abaixo 👇
             </p>
-            <!-- Space for Instagram Link Widget -->
-            <div class="h-24 w-full bg-white/5 border-2 border-dashed border-white/20 rounded-3xl flex items-center justify-center">
-                <span class="text-white/20 text-3xl font-bold uppercase">Área do Link Widget</span>
+            <!-- Space for Link Widget -->
+            <div class="h-28 w-full bg-white/5 border-2 border-dashed border-white/20 rounded-[32px] flex items-center justify-center">
+                <span class="text-white/10 text-3xl font-bold uppercase tracking-widest">Área do Link Widget</span>
             </div>
         </div>
     </div>
