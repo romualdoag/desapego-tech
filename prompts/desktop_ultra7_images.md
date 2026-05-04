@@ -1,4 +1,4 @@
-# Prompt: Baixar imagens do Desktop Ultra 7 e criar anúncio
+# Prompt: Pesquisar preços e criar anúncio Desktop Ultra 7
 
 ## Contexto
 
@@ -7,31 +7,72 @@ Pastas já criadas:
 - `raw_pictures/desktop_ultra_7/`
 - `frontend/public/images/desktop_ultra_7/`
 
-## Tarefa
+O dono precisa estimar o preço de venda do conjunto. Para isso, pesquisar
+preço de cada componente (novo e usado) no Mercado Livre e OLX Brasil.
 
-Baixar imagens dos componentes abaixo e salvar em ambas as pastas acima.
-Depois adicionar o produto em `frontend/src/data/products.ts`.
+---
 
-## Componentes e links Amazon
+## Etapa 1 — Pesquisa de preços
+
+Para **cada componente** da lista abaixo, buscar via WebSearch e WebFetch:
+
+1. Preço novo no Mercado Livre (`site:mercadolivre.com.br`)
+2. Preço usado no Mercado Livre (filtro "usado")
+3. Preço usado na OLX (`site:olx.com.br`)
+
+Montar tabela ao final:
+
+| Componente | Novo (ML) | Usado (ML) | Usado (OLX) |
+|---|---|---|---|
+| Intel Core Ultra 7 265K | | | |
+| GIGABYTE RTX 5060 Ti GAMING OC | | | |
+| Gigabyte Z890 AORUS Elite WIFI7 | | | |
+| Corsair Vengeance 64GB DDR5 6400 (2x32GB) | | | |
+| Samsung SSD 990 PRO 1TB | | | |
+| Thermalright FW 240 SE ARGB (240mm) | | | |
+| Fonte Rise Mode Zeus 850W Modular | | | |
+
+Após montar a tabela:
+- Somar coluna "Novo (ML)" → custo de reposição total
+- Somar coluna "Usado (ML/OLX)" → referência de mercado para conjunto usado
+- Sugerir faixa de preço de venda para o conjunto montado (com desconto de ~15-25% sobre soma novo, ou ~10% acima da soma usado)
+
+---
+
+## Etapa 2 — Baixar imagens dos componentes
+
+Para cada componente, tentar obter imagem de produto (PNG/JPG fundo branco ou transparente):
+
+1. Buscar via WebSearch: `<componente> product image filetype:png OR filetype:jpg`
+2. Tentar fabricante diretamente: gigabyte.com, intel.com, samsung.com, corsair.com, thermalright.com
+3. Baixar com curl e salvar em **ambas** as pastas:
+   - `raw_pictures/desktop_ultra_7/<nome>.jpg`
+   - `frontend/public/images/desktop_ultra_7/<nome>.jpg`
+
+Nomes de arquivo alvo:
+- `cpu.jpg` — Intel Core Ultra 7 265K
+- `gpu.jpg` — GIGABYTE RTX 5060 Ti
+- `motherboard.jpg` — Gigabyte Z890 AORUS Elite WIFI7
+- `ram.jpg` — Corsair Vengeance DDR5 64GB
+- `ssd.jpg` — Samsung 990 PRO 1TB
+- `watercooler.jpg` — Thermalright FW 240 SE ARGB
+- `psu.jpg` — Fonte Rise Mode Zeus 850W
+
+### Links Amazon dos componentes (referência de modelo exato)
 
 | Componente | Amazon |
 |---|---|
-| Thermalright FW 240 SE ARGB (watercooler) | https://www.amazon.com/dp/B0DS256KQP |
+| Thermalright FW 240 SE ARGB | https://www.amazon.com/dp/B0DS256KQP |
 | Intel Core Ultra 7 265K | https://www.amazon.com/dp/B0DFK2MH2D |
 | GIGABYTE RTX 5060 Ti GAMING OC | https://www.amazon.com/dp/B0FFQ8P2HK |
 | GIGABYTE Z890 AORUS Elite WIFI7 | https://www.amazon.com/dp/B0DJP95MGB |
 
-Para cada produto tente:
-1. Buscar imagem diretamente nos sites dos fabricantes (Gigabyte, Intel, Samsung, Corsair, Thermalright)
-2. Alternativamente buscar via WebSearch por `<produto> product image -site:amazon.com`
-3. Baixar com curl e salvar como `<componente>.jpg` (ex: `cpu.jpg`, `gpu.jpg`, `motherboard.jpg`, `watercooler.jpg`, `ram.jpg`, `ssd.jpg`, `psu.jpg`)
+---
 
-Componentes sem link Amazon (buscar imagem via WebSearch):
-- Samsung SSD 990 PRO 1TB
-- Corsair Vengeance 64GB DDR5 6400 (CMK64GX5M2B6400C42)
-- Fonte Rise Mode Zeus 850W Modular (RM-PSU-01-PA-850)
+## Etapa 3 — Adicionar produto em products.ts
 
-## Specs do produto (para products.ts)
+Após pesquisa de preços, preencher o `price` com o valor decidido e adicionar em
+`frontend/src/data/products.ts`:
 
 ```ts
 {
@@ -44,22 +85,23 @@ Componentes sem link Amazon (buscar imagem via WebSearch):
     "RAM: 64GB DDR5 Corsair Vengeance 6400MT/s (2x32GB)",
     "SSD: Samsung 990 PRO 1TB NVMe Gen4",
     "Placa-Mãe: Gigabyte Z890 AORUS Elite WIFI7",
-    "Refrigeração: Thermalright FW 240 SE ARGB (Watercooler)",
+    "Refrigeração: Thermalright FW 240 SE ARGB (Watercooler 240mm)",
     "Fonte: Rise Mode Zeus 850W Modular 80+ PFC Ativo"
   ],
   includedItems: ["Todos os componentes montados e testados"],
   condition: "Adquirido novo. Todos os componentes novos, montados e funcionando.",
-  price: "A consultar",
+  price: "A consultar", // substituir pelo valor estimado na Etapa 1
   folder: "desktop_ultra_7",
-  images: [] // preencher com os nomes dos arquivos baixados
+  images: [] // preencher com nomes dos arquivos baixados na Etapa 2
 }
 ```
 
-## Após baixar imagens
+---
 
-Commit e push direto na `main`:
+## Etapa 4 — Commit e push
+
 ```bash
 git add frontend/src/data/products.ts frontend/public/images/desktop_ultra_7/ raw_pictures/desktop_ultra_7/
-git commit -m "feat: adiciona anúncio Desktop Intel Core Ultra 7 265K"
+git commit -m "feat: adiciona anúncio Desktop Intel Core Ultra 7 265K com preço estimado"
 git push origin main
 ```
