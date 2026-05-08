@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story 01 - Desapegos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .story-canvas {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(180deg, #09090b 0%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 350px 1fr 400px;
+        }
+        .glow {
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 40px;
+            padding: 0 60px;
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: inset 0 0 50px rgba(255,255,255,0.02);
+        }
+        .product-image {
+            width: 340px;
+            aspect-ratio: 1;
+            border-radius: 45px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+        .price-tag {
+            color: #60a5fa;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 48px;
+            letter-spacing: -0.02em;
+        }
+        .product-name {
+            color: white;
+            font-weight: 700;
+            font-size: 38px;
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+        .product-spec {
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        .emphasis {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        .page-indicator {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            color: rgba(255,255,255,0.3);
+            font-weight: 800;
+            font-size: 32px;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-canvas">
+        <div class="page-indicator">01/02</div>
+        <div class="glow top-[-300px] left-[-300px]"></div>
+        <div class="glow bottom-[-300px] right-[-300px]"></div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center pt-16">
+            <h1 class="text-[90px] font-extrabold text-white leading-[1] tracking-tighter text-center uppercase">
+                Desapegos <span class="text-blue-500">do Mumu</span>
+            </h1>
+            <div class="mt-6 h-1.5 w-24 bg-blue-500/50 rounded-full"></div>
+            <p class="text-zinc-500 text-3xl font-bold uppercase tracking-[0.3em] mt-8">Tech de Alto Padrão</p>
+        </div>
+
+        <div class="relative z-10 product-grid">
+            <div class="product-card emphasis">
+                <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="product-image">
+                <h3 class="product-name">MacBook Air M4</h3>
+                <p class="product-spec">24GB RAM</p>
+                <p class="price-tag">R$ 8.000</p>
+            </div>
+            <div class="product-card emphasis">
+                <img src="https://romualdoag.github.io/desapego-tech/images/desktop_ultra_7/gpu.jpg" class="product-image">
+                <h3 class="product-name">Desktop Ultra 7</h3>
+                <p class="product-spec">RTX 5060 Ti • 64GB</p>
+                <p class="price-tag">R$ 16.500</p>
+            </div>
+            <div class="product-card">
+                <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="product-image">
+                <h3 class="product-name">Mac Mini M4</h3>
+                <p class="product-spec">16GB / 1TB Exp.</p>
+                <p class="price-tag">R$ 9.000</p>
+            </div>
+            <div class="product-card">
+                <img src="https://romualdoag.github.io/desapego-tech/images/olympus_em10_mark_iv/IMG_2491.JPEG" class="product-image">
+                <h3 class="product-name">Olympus E-M10</h3>
+                <p class="product-spec">Lente 14-42mm</p>
+                <p class="price-tag">R$ 5.200</p>
+            </div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center justify-start pt-12 px-16">
+            <p class="text-4xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-12">
+                👇 Clique abaixo 👇
+            </p>
+            <div class="h-32 w-full border-2 border-dashed border-white/20 rounded-[40px] flex items-center justify-center bg-white/5">
+                <span class="text-white/10 text-3xl font-bold uppercase tracking-widest">Área do Link</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

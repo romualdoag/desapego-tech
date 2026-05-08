@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Stories Generator</title>
+    <title>Instagram Story 02 - Desapegos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #18181b;
+            background: #000;
             margin: 0;
-            padding: 50px;
+            padding: 0;
             display: flex;
-            flex-direction: row;
-            gap: 100px;
             justify-content: center;
         }
         .story-canvas {
@@ -24,9 +22,7 @@
             position: relative;
             overflow: hidden;
             display: grid;
-            grid-template-rows: 350px 1fr 400px; /* Larger Header/Footer for 2x2 */
-            flex-shrink: 0;
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+            grid-template-rows: 350px 1fr 400px;
         }
         .glow {
             position: absolute;
@@ -82,11 +78,6 @@
             font-size: 28px;
             margin-bottom: 12px;
         }
-        /* Emphasis for High-Value Items */
-        .emphasis {
-            background: rgba(59, 130, 246, 0.08);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
         .page-indicator {
             position: absolute;
             top: 40px;
@@ -100,75 +91,11 @@
 </head>
 <body>
 
-    <!-- PAGE 1 -->
-    <div id="story-1" class="story-canvas">
-        <div class="page-indicator">01/02</div>
-        <div class="glow top-[-300px] left-[-300px]"></div>
-        <div class="glow bottom-[-300px] right-[-300px]"></div>
-
-        <!-- Header -->
-        <div class="relative z-10 flex flex-col items-center justify-center pt-16">
-            <h1 class="text-[90px] font-extrabold text-white leading-[1] tracking-tighter text-center uppercase">
-                Desapegos <span class="text-blue-500">do Mumu</span>
-            </h1>
-            <div class="mt-6 h-1.5 w-24 bg-blue-500/50 rounded-full"></div>
-            <p class="text-zinc-500 text-3xl font-bold uppercase tracking-[0.3em] mt-8">Tech de Alto Padrão</p>
-        </div>
-
-        <!-- Product Grid -->
-        <div class="relative z-10 product-grid">
-            
-            <!-- MacBook Air -->
-            <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="product-image">
-                <h3 class="product-name">MacBook Air M4</h3>
-                <p class="product-spec">24GB RAM</p>
-                <p class="price-tag">R$ 8.000</p>
-            </div>
-
-            <!-- Desktop Ultra 7 -->
-            <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/desktop_ultra_7/gpu.jpg" class="product-image">
-                <h3 class="product-name">Desktop Ultra 7</h3>
-                <p class="product-spec">RTX 5060 Ti • 64GB</p>
-                <p class="price-tag">R$ 16.500</p>
-            </div>
-
-            <!-- Mac Mini -->
-            <div class="product-card">
-                <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="product-image">
-                <h3 class="product-name">Mac Mini M4</h3>
-                <p class="product-spec">16GB / 1TB Exp.</p>
-                <p class="price-tag">R$ 9.000</p>
-            </div>
-
-            <!-- Olympus Camera -->
-            <div class="product-card">
-                <img src="https://romualdoag.github.io/desapego-tech/images/olympus_em10_mark_iv/IMG_2491.JPEG" class="product-image">
-                <h3 class="product-name">Olympus E-M10</h3>
-                <p class="product-spec">Lente 14-42mm</p>
-                <p class="price-tag">R$ 5.200</p>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="relative z-10 flex flex-col items-center justify-start pt-12 px-16">
-            <p class="text-4xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-12">
-                👇 Clique abaixo 👇
-            </p>
-            <div class="h-32 w-full border-2 border-dashed border-white/20 rounded-[40px] flex items-center justify-center bg-white/5">
-                <span class="text-white/10 text-3xl font-bold uppercase tracking-widest">Área do Link</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- PAGE 2 -->
-    <div id="story-2" class="story-canvas">
+    <div class="story-canvas">
         <div class="page-indicator">02/02</div>
         <div class="glow top-[-300px] right-[-300px]"></div>
         <div class="glow bottom-[-300px] left-[-300px]"></div>
 
-        <!-- Header -->
         <div class="relative z-10 flex flex-col items-center justify-center pt-16">
             <h1 class="text-[90px] font-extrabold text-white leading-[1] tracking-tighter text-center uppercase">
                 Mais <span class="text-blue-500">Oportunidades</span>
@@ -177,34 +104,25 @@
             <p class="text-zinc-500 text-3xl font-bold uppercase tracking-[0.3em] mt-8">Acessórios & Periféricos</p>
         </div>
 
-        <!-- Product Grid -->
         <div class="relative z-10 product-grid">
-            
-            <!-- AirPods Max -->
             <div class="product-card">
                 <img src="https://romualdoag.github.io/desapego-tech/images/airpods_max/IMG_2480.JPEG" class="product-image">
                 <h3 class="product-name">AirPods Max</h3>
                 <p class="product-spec">USB-C • Midnight</p>
                 <p class="price-tag">R$ 2.800</p>
             </div>
-
-            <!-- AirPods Pro 2 -->
             <div class="product-card">
                 <img src="https://romualdoag.github.io/desapego-tech/images/airpods_pro_2/IMG_0237.JPEG" class="product-image">
                 <h3 class="product-name">AirPods Pro 2</h3>
                 <p class="product-spec">Lightning</p>
                 <p class="price-tag">R$ 900</p>
             </div>
-
-            <!-- Dell Dock -->
             <div class="product-card">
                 <img src="https://romualdoag.github.io/desapego-tech/images/dell_dockstation_wd19/IMG_2209.JPEG" class="product-image">
                 <h3 class="product-name">Dell Dock WD19</h3>
                 <p class="product-spec">USB-C • 180W</p>
                 <p class="price-tag">R$ 500</p>
             </div>
-
-            <!-- Chromecast -->
             <div class="product-card">
                 <img src="https://romualdoag.github.io/desapego-tech/images/google_chromecast/IMG_0243.JPEG" class="product-image">
                 <h3 class="product-name">Chromecast HD</h3>
@@ -213,7 +131,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="relative z-10 flex flex-col items-center justify-start pt-12 px-16">
             <p class="text-4xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-12">
                 👇 Clique abaixo 👇
