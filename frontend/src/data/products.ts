@@ -8,6 +8,7 @@ export interface Product {
   price: string;
   folder: string;
   images: string[];
+  sold?: boolean;
 }
 
 export const products: Product[] = [
@@ -100,7 +101,8 @@ export const products: Product[] = [
     condition: "Adquirido novo, único dono. Corpo e tela em estado impecável.",
     price: "R$ 4.900",
     folder: "iphone_15_pro_max_256",
-    images: ["IMG_0235.JPEG", "IMG_9928.JPEG", "IMG_9929.JPEG", "IMG_9931.JPEG", "IMG_9932.JPEG"]
+    images: ["IMG_0235.JPEG", "IMG_9928.JPEG", "IMG_9929.JPEG", "IMG_9931.JPEG", "IMG_9932.JPEG"],
+    sold: true
   },
   {
     id: "airpods-max",
