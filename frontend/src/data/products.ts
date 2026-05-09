@@ -173,6 +173,7 @@ export const products: Product[] = [
     condition: "Adquirido novo. Completo e funcionando perfeitamente.",
     price: "R$ 450",
     folder: "google_chromecast",
-    images: ["IMG_0243.JPEG", "IMG_0240.JPEG", "IMG_0241.JPEG", "IMG_0242.JPEG", "IMG_0244.JPEG"]
+    images: ["IMG_0243.JPEG", "IMG_0240.JPEG", "IMG_0241.JPEG", "IMG_0242.JPEG", "IMG_0244.JPEG"],
+    sold: true
   }
 ];
