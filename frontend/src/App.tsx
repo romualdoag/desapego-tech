@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { products, type Product } from './data/products';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
-import { ShoppingBag, Search, Sparkles } from 'lucide-react';
+import { ShoppingBag, Search, Sparkles, Info } from 'lucide-react';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -43,6 +43,23 @@ function App() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Disclaimer Banner */}
+        <div className="mb-12 bg-blue-50/50 dark:bg-blue-900/10 border border-blue-200/50 dark:border-blue-800/30 rounded-2xl p-4 sm:p-5 shadow-sm backdrop-blur-sm">
+          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+            <div className="bg-blue-100 dark:bg-blue-900/40 p-2.5 rounded-xl shrink-0 text-blue-600 dark:text-blue-400">
+              <Info size={24} />
+            </div>
+            <div className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed space-y-2 pt-0.5">
+              <p>
+                <strong className="text-zinc-900 dark:text-zinc-100 font-semibold">💳 Parcelamento no cartão:</strong> Disponível com parcela mínima de <strong>R$ 1.000,00</strong>. Acréscimo da maquininha de aproximadamente <strong>14%</strong> (em 12x) e <strong>3,5%</strong> (no crédito à vista 1x).
+              </p>
+              <p>
+                <strong className="text-zinc-900 dark:text-zinc-100 font-semibold">📦 Envio:</strong> Realizado pelo <a href="https://melhorenvio.com.br/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline font-medium transition-colors">Melhor Envio</a>. Para calcular o frete, utilize o CEP de origem <strong>29060974</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Hero Section */}
         <div className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6 border border-blue-100 dark:border-blue-800/30">
