@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { products, type Product } from './data/products';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
-import { Search, Sparkles, Info } from 'lucide-react';
+import { Search, Sparkles, Info, LayoutTemplate, ChevronDown } from 'lucide-react';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showStoryMenu, setShowStoryMenu] = useState(false);
 
   const filteredProducts = products.filter(product =>
     !product.sold && (
@@ -29,15 +30,56 @@ function App() {
               </h1>
             </div>
 
-            <div className="relative hidden sm:block w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600" size={14} />
-              <input
-                type="text"
-                placeholder="Buscar produtos..."
-                className="w-full pl-9 pr-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-amber-500/40 transition-colors"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+            <div className="flex items-center gap-3">
+              <div className="relative hidden sm:block w-56">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600" size={14} />
+                <input
+                  type="text"
+                  placeholder="Buscar produtos..."
+                  className="w-full pl-9 pr-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-amber-500/40 transition-colors"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+
+              <div className="relative">
+                <button
+                  onClick={() => setShowStoryMenu(v => !v)}
+                  className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-amber-400 hover:border-amber-500/30 text-xs font-display font-bold transition-all"
+                >
+                  <LayoutTemplate size={13} />
+                  Stories IG
+                  <ChevronDown size={12} className={`transition-transform duration-200 ${showStoryMenu ? 'rotate-180' : ''}`} />
+                </button>
+
+                {showStoryMenu && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setShowStoryMenu(false)} />
+                    <div className="absolute right-0 top-full mt-2 w-52 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl z-50">
+                      <a
+                        href={`${import.meta.env.BASE_URL}instagram-story-1.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-4 py-3.5 text-sm text-zinc-300 hover:text-amber-400 hover:bg-zinc-800 transition-colors"
+                        onClick={() => setShowStoryMenu(false)}
+                      >
+                        <span className="font-display font-bold text-amber-400 text-xs w-5">01</span>
+                        MacBook · Mac Mini · Olympus
+                      </a>
+                      <a
+                        href={`${import.meta.env.BASE_URL}instagram-story-2.html`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-4 py-3.5 text-sm text-zinc-300 hover:text-amber-400 hover:bg-zinc-800 transition-colors border-t border-zinc-800"
+                        onClick={() => setShowStoryMenu(false)}
+                      >
+                        <span className="font-display font-bold text-amber-400 text-xs w-5">02</span>
+                        AirPods · Dell Dock
+                      </a>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
