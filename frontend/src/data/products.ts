@@ -141,6 +141,7 @@ export const products: Product[] = [
     includedItems: ["Fonte original Dell de 180W"],
     condition: "Adquirido novo. Estrutura preservada e funcional.",
     price: "R$ 500",
+    mercadoLivreUrl: "https://www.mercadolivre.com.br/dock-station-dell-c-fonte-wd19--180w/up/MLBU4066519104",
     folder: "dell_dockstation_wd19",
     images: ["IMG_2209.JPEG", "IMG_2210.JPEG", "IMG_2211.JPEG", "IMG_2212.JPEG", "IMG_2213.JPEG", "IMG_2214.JPEG", "IMG_2215.JPEG"]
   },
