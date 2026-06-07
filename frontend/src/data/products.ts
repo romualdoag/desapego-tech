@@ -105,6 +105,7 @@ export const products: Product[] = [
     condition: "Adquirido novo. Malha do arco e almofadas em excelente estado.",
     price: "R$ 1.995",
     originalPrice: "R$ 2.100",
+    mercadoLivreUrl: "https://www.mercadolivre.com.br/apple-airpods-max--meianoite/up/MLBU4052042469?pdp_filters=item_id:MLB6917158702",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
   },
