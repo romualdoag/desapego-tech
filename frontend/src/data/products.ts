@@ -25,7 +25,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Cabo de energia original"],
     condition: "Adquirido novo. Acabamento em alumínio sem detalhes ou riscos.",
-    price: "R$ 7.000",
+    price: "R$ 6.000",
     folder: "mac_mini_m4",
     images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG"]
   },
@@ -45,7 +45,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Carregador original (Padrão US)", "Cabo USB-C original", "Capa TPU Rígida", "Bolsa de transporte"],
     condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
-    price: "R$ 8.000",
+    price: "R$ 8.800",
     folder: "macbook_air_m4_24gb",
     images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"]
   },
