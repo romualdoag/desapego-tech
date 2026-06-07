@@ -3,147 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Story 01 - Desapegos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Instagram Story 01 — Desapego Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             background: #000;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
+            -webkit-font-smoothing: antialiased;
         }
+
         .story-canvas {
             width: 1080px;
             height: 1920px;
-            background: linear-gradient(180deg, #09090b 0%, #000000 100%);
+            background: #09090b;
             position: relative;
             overflow: hidden;
-            display: grid;
-            grid-template-rows: 350px 1fr 400px;
+            display: flex;
+            flex-direction: column;
         }
-        .glow {
+
+        .glow-top {
             position: absolute;
-            width: 1200px;
-            height: 1200px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
+            width: 900px;
+            height: 900px;
+            top: -300px;
+            left: -200px;
+            background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .product-grid {
+        .glow-bottom {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            bottom: -200px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Header */
+        .header-zone {
+            position: relative;
+            z-index: 10;
+            padding: 80px 80px 50px;
+            flex-shrink: 0;
+        }
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.25);
+            border-radius: 100px;
+            padding: 10px 24px;
+            margin-bottom: 32px;
+        }
+        .page-badge span {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #fbbf24;
+        }
+        .page-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fbbf24;
+        }
+
+        .headline {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 100px;
+            line-height: 0.92;
+            letter-spacing: -0.03em;
+            color: #fafaf9;
+            text-transform: uppercase;
+        }
+        .headline .accent { color: #fbbf24; }
+
+        .sub-headline {
+            margin-top: 24px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #52525b;
+        }
+
+        /* Grid */
+        .grid-zone {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            padding: 0 80px;
+        }
+
+        /* Hero card — full width, landscape */
+        .hero-card {
+            background: rgba(251,191,36,0.05);
+            border: 1px solid rgba(251,191,36,0.2);
+            border-radius: 48px;
+            padding: 44px 52px;
+            display: flex;
+            align-items: center;
+            gap: 52px;
+            flex: 1.4;
+        }
+
+        .hero-image {
+            width: 360px;
+            height: 360px;
+            border-radius: 36px;
+            object-fit: cover;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(251,191,36,0.15);
+            border: 1px solid rgba(251,191,36,0.3);
+            border-radius: 100px;
+            padding: 6px 18px;
+            width: fit-content;
+            margin-bottom: 4px;
+        }
+        .hero-badge span {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fbbf24;
+        }
+
+        .hero-name {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 52px;
+            line-height: 1.0;
+            color: #fafaf9;
+        }
+
+        .hero-spec {
+            font-size: 28px;
+            font-weight: 500;
+            color: #52525b;
+        }
+
+        .hero-price {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 60px;
+            letter-spacing: -0.02em;
+            color: #fbbf24;
+            margin-top: 8px;
+        }
+
+        /* Small cards row */
+        .small-row {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 40px;
-            padding: 0 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            flex: 1;
         }
+
         .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 60px;
-            padding: 40px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 44px;
+            padding: 36px 28px 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            box-shadow: inset 0 0 50px rgba(255,255,255,0.02);
         }
+
         .product-image {
-            width: 340px;
-            aspect-ratio: 1;
-            border-radius: 45px;
+            width: 280px;
+            height: 280px;
+            border-radius: 32px;
             object-fit: cover;
-            margin-bottom: 25px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            margin-bottom: 24px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.7);
         }
-        .price-tag {
-            color: #60a5fa;
-            font-weight: 900;
-            font-style: italic;
-            font-size: 48px;
-            letter-spacing: -0.02em;
-        }
+
         .product-name {
-            color: white;
+            font-family: 'Syne', sans-serif;
             font-weight: 700;
-            font-size: 38px;
-            margin-bottom: 6px;
+            font-size: 34px;
+            color: #fafaf9;
             line-height: 1.1;
+            margin-bottom: 6px;
         }
+
         .product-spec {
-            color: #94a3b8;
-            font-weight: 600;
-            font-size: 28px;
+            font-size: 24px;
+            font-weight: 500;
+            color: #52525b;
             margin-bottom: 12px;
         }
-        .emphasis {
-            background: rgba(59, 130, 246, 0.08);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-        .page-indicator {
-            position: absolute;
-            top: 40px;
-            right: 60px;
-            color: rgba(255,255,255,0.3);
+
+        .product-price {
+            font-family: 'Syne', sans-serif;
             font-weight: 800;
-            font-size: 32px;
-            letter-spacing: 0.1em;
+            font-size: 40px;
+            letter-spacing: -0.02em;
+            color: #fbbf24;
+        }
+
+        /* Footer */
+        .footer-zone {
+            position: relative;
+            z-index: 10;
+            padding: 36px 80px 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            flex-shrink: 0;
+        }
+
+        .cta-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #3f3f46;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+        }
+
+        .link-area {
+            width: 100%;
+            height: 100px;
+            border: 1.5px dashed rgba(255,255,255,0.12);
+            border-radius: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.02);
+        }
+        .link-area span {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.08);
+        }
+
+        .page-counter {
+            position: absolute;
+            top: 64px;
+            right: 80px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.2);
+            z-index: 20;
         }
     </style>
 </head>
 <body>
 
-    <div class="story-canvas">
-        <div class="page-indicator">01/02</div>
-        <div class="glow top-[-300px] left-[-300px]"></div>
-        <div class="glow bottom-[-300px] right-[-300px]"></div>
+<div class="story-canvas">
+    <div class="glow-top"></div>
+    <div class="glow-bottom"></div>
+    <div class="page-counter">01 / 02</div>
 
-        <div class="relative z-10 flex flex-col items-center justify-center pt-16">
-            <h1 class="text-[90px] font-extrabold text-white leading-[1] tracking-tighter text-center uppercase">
-                Desapegos <span class="text-blue-500">do Mumu</span>
-            </h1>
-            <div class="mt-6 h-1.5 w-24 bg-blue-500/50 rounded-full"></div>
-            <p class="text-zinc-500 text-3xl font-bold uppercase tracking-[0.3em] mt-8">Tech de Alto Padrão</p>
+    <div class="header-zone">
+        <div class="page-badge">
+            <div class="page-badge-dot"></div>
+            <span>Curadoria exclusiva</span>
         </div>
+        <h1 class="headline">
+            Desapegos<br>
+            <span class="accent">do Mumu</span>
+        </h1>
+        <p class="sub-headline">Eletrônicos de alto padrão · Procedência garantida</p>
+    </div>
 
-        <div class="relative z-10 product-grid">
-            <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="product-image">
-                <h3 class="product-name">MacBook Air M4</h3>
-                <p class="product-spec">24GB RAM</p>
-                <p class="price-tag">R$ 8.000</p>
-            </div>
-            <div class="product-card emphasis">
-                <img src="https://romualdoag.github.io/desapego-tech/images/desktop_ultra_7/gpu.jpg" class="product-image">
-                <h3 class="product-name">Desktop Ultra 7</h3>
-                <p class="product-spec">RTX 5060 Ti • 64GB</p>
-                <p class="price-tag">R$ 16.500</p>
-            </div>
-            <div class="product-card">
-                <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="product-image">
-                <h3 class="product-name">Mac Mini M4</h3>
-                <p class="product-spec">16GB / 1TB Exp.</p>
-                <p class="price-tag">R$ 9.000</p>
-            </div>
-            <div class="product-card">
-                <img src="https://romualdoag.github.io/desapego-tech/images/olympus_em10_mark_iv/IMG_2491.JPEG" class="product-image">
-                <h3 class="product-name">Olympus E-M10</h3>
-                <p class="product-spec">Lente 14-42mm</p>
-                <p class="price-tag">R$ 5.200</p>
+    <div class="grid-zone">
+        <!-- Hero: MacBook Air M4 -->
+        <div class="hero-card">
+            <img src="https://romualdoag.github.io/desapego-tech/images/macbook_air_m4_24gb/001.JPEG" class="hero-image" alt="MacBook Air M4">
+            <div class="hero-text">
+                <div class="hero-badge"><span>✦ Destaque</span></div>
+                <p class="hero-name">MacBook Air M4</p>
+                <p class="hero-spec">24GB RAM · 512GB · 100% bateria</p>
+                <p class="hero-price">R$ 8.000</p>
             </div>
         </div>
 
-        <div class="relative z-10 flex flex-col items-center justify-start pt-12 px-16">
-            <p class="text-4xl text-zinc-500 font-bold uppercase tracking-[0.4em] mb-12">
-                👇 Clique abaixo 👇
-            </p>
-            <div class="h-32 w-full border-2 border-dashed border-white/20 rounded-[40px] flex items-center justify-center bg-white/5">
-                <span class="text-white/10 text-3xl font-bold uppercase tracking-widest">Área do Link</span>
+        <!-- Small row -->
+        <div class="small-row">
+            <div class="product-card">
+                <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="product-image" alt="Mac Mini M4">
+                <p class="product-name">Mac Mini M4</p>
+                <p class="product-spec">16GB · 512GB</p>
+                <p class="product-price">R$ 7.000</p>
+            </div>
+            <div class="product-card">
+                <img src="https://romualdoag.github.io/desapego-tech/images/olympus_em10_mark_iv/IMG_2491.JPEG" class="product-image" alt="Olympus E-M10">
+                <p class="product-name">Olympus E-M10</p>
+                <p class="product-spec">Lente 14-42mm EZ</p>
+                <p class="product-price">R$ 4.600</p>
             </div>
         </div>
     </div>
+
+    <div class="footer-zone">
+        <p class="cta-text">👇 Clique abaixo para ver tudo 👇</p>
+        <div class="link-area">
+            <span>Área do Link</span>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -1,25 +1,15 @@
 @import "tailwindcss";
 
-@theme {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
-    }
+@layer utilities {
+  .font-display {
+    font-family: 'Syne', sans-serif;
   }
 }
 
 body {
-  @apply bg-background text-foreground;
+  font-family: 'DM Sans', sans-serif;
+  background: #09090b;
+  color: #f0ece6;
   font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
 }

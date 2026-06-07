@@ -2,38 +2,39 @@ import { useState } from 'react';
 import { products, type Product } from './data/products';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
-import { ShoppingBag, Search, Sparkles, Info } from 'lucide-react';
+import { Search, Sparkles, Info } from 'lucide-react';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredProducts = products.filter(product => 
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = products.filter(product =>
+    !product.sold && (
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   );
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 transition-colors">
+    <div className="min-h-screen bg-zinc-950">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-2">
-              <div className="bg-blue-600 p-2 rounded-xl">
-                <ShoppingBag className="text-white" size={24} />
-              </div>
-              <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400">
-                Desapego Tech — Do Mumu
+      <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-800/50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center gap-3">
+              <span className="font-display text-amber-400 text-lg select-none leading-none">✦</span>
+              <h1 className="font-display text-[15px] font-bold tracking-tight text-zinc-100">
+                Desapego Tech
+                <span className="text-zinc-600 font-normal ml-2 text-sm">— do Mumu</span>
               </h1>
             </div>
 
-            <div className="relative hidden sm:block w-72">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
-              <input 
-                type="text" 
+            <div className="relative hidden sm:block w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600" size={14} />
+              <input
+                type="text"
                 placeholder="Buscar produtos..."
-                className="w-full pl-10 pr-4 py-2 bg-zinc-100 dark:bg-zinc-800 border-transparent focus:bg-white dark:focus:bg-zinc-700 focus:ring-2 focus:ring-blue-500 rounded-full text-sm transition-all outline-none dark:text-zinc-100"
+                className="w-full pl-9 pr-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-sm text-zinc-200 placeholder-zinc-600 outline-none focus:border-amber-500/40 transition-colors"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -42,69 +43,82 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Disclaimer Banner */}
-        <div className="mb-12 bg-blue-50/50 dark:bg-blue-900/10 border border-blue-200/50 dark:border-blue-800/30 rounded-2xl p-4 sm:p-5 shadow-sm backdrop-blur-sm">
-          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
-            <div className="bg-blue-100 dark:bg-blue-900/40 p-2.5 rounded-xl shrink-0 text-blue-600 dark:text-blue-400">
-              <Info size={24} />
-            </div>
-            <div className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed space-y-2 pt-0.5">
-              <p>
-                <strong className="text-zinc-900 dark:text-zinc-100 font-semibold">💳 Parcelamento no cartão:</strong> Disponível com parcela mínima de <strong>R$ 1.000,00</strong>. Acréscimo da maquininha de aproximadamente <strong>14%</strong> (em 12x) e <strong>3,5%</strong> (no crédito à vista 1x).
-              </p>
-              <p>
-                <strong className="text-zinc-900 dark:text-zinc-100 font-semibold">📦 Envio:</strong> Realizado pelo <a href="https://melhorenvio.com.br/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline font-medium transition-colors">Melhor Envio</a>. Para calcular o frete, utilize o CEP de origem <strong>29060974</strong>.
-              </p>
-            </div>
+      <main className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
+        {/* Info Banner */}
+        <div className="mb-14 rounded-2xl p-5 bg-zinc-900 border border-zinc-800/80 flex gap-4">
+          <div className="shrink-0 text-amber-400 mt-0.5">
+            <Info size={17} />
+          </div>
+          <div className="text-sm text-zinc-500 leading-relaxed space-y-1.5">
+            <p>
+              <strong className="text-zinc-300 font-medium">Parcelamento no cartão:</strong>{' '}
+              Parcela mínima de <strong className="text-zinc-300 font-medium">R$ 1.000</strong>. Acréscimo de aprox.{' '}
+              <strong className="text-zinc-300 font-medium">14%</strong> (12x) ou{' '}
+              <strong className="text-zinc-300 font-medium">3,5%</strong> (crédito à vista).
+            </p>
+            <p>
+              <strong className="text-zinc-300 font-medium">Envio:</strong>{' '}
+              Pelo{' '}
+              <a
+                href="https://melhorenvio.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 hover:underline transition-colors"
+              >
+                Melhor Envio
+              </a>
+              . CEP de origem: <strong className="text-zinc-300 font-medium">29060974</strong>.
+            </p>
           </div>
         </div>
 
-        {/* Hero Section */}
-        <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6 border border-blue-100 dark:border-blue-800/30">
-            <Sparkles size={16} />
-            <span>Curadoria exclusiva do Mumu</span>
+        {/* Hero */}
+        <div className="mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-display font-bold uppercase tracking-widest mb-7">
+            <Sparkles size={11} />
+            Curadoria exclusiva
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">
-            Desapegos do Mumu
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[0.92] tracking-tighter text-zinc-50 mb-5">
+            Desapegos<br />
+            <span className="text-amber-400">do Mumu</span>
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Uma seleção de eletrônicos de alto padrão e procedência garantida. Todos os itens são de uso pessoal, adquiridos novos e extremamente bem cuidados.
+          <p className="text-base sm:text-lg text-zinc-500 max-w-lg leading-relaxed">
+            Eletrônicos de alto padrão com procedência garantida.
+            Adquiridos novos, extremamente bem cuidados.
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Product Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filteredProducts.map(product => (
-              <ProductCard 
-                key={product.id} 
-                product={product} 
-                onClick={setSelectedProduct} 
+              <ProductCard
+                key={product.id}
+                product={product}
+                onClick={setSelectedProduct}
               />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20">
-            <p className="text-zinc-500 dark:text-zinc-400 text-lg">Nenhum produto encontrado para sua busca.</p>
+          <div className="text-center py-24">
+            <p className="text-zinc-600 text-base">Nenhum produto encontrado.</p>
           </div>
         )}
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-200 dark:border-zinc-800 py-12 bg-white dark:bg-zinc-900">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm">
-            © {new Date().getFullYear()} Desapego Tech. Feito com ❤️ e Vite.
+      <footer className="border-t border-zinc-800/50 py-12 mt-4">
+        <div className="max-w-7xl mx-auto px-5 text-center">
+          <span className="font-display text-amber-400 text-base select-none">✦</span>
+          <p className="mt-2 text-zinc-700 text-sm">
+            © {new Date().getFullYear()} Desapego Tech · Todos os itens são de uso pessoal, adquiridos novos.
           </p>
         </div>
       </footer>
 
-      {/* Detail Modal */}
-      <ProductModal 
-        product={selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
       />
     </div>
   );

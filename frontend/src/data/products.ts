@@ -6,6 +6,7 @@ export interface Product {
   includedItems: string[];
   condition: string;
   price: string;
+  originalPrice?: string;
   folder: string;
   images: string[];
   sold?: boolean;
@@ -13,40 +14,20 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "desktop-ultra-7",
-    name: "Desktop Intel Core Ultra 7 265K",
-    description: "PC Desktop de alta performance montado com componentes de última geração. CPU Arrow Lake, GPU RTX 5060 Ti 16GB e 64GB DDR5.",
-    specs: [
-      "CPU: Intel Core Ultra 7 265K (Arrow Lake)",
-      "GPU: GIGABYTE GeForce RTX 5060 Ti GAMING OC 16GB",
-      "RAM: 64GB DDR5 Corsair Vengeance 6400MT/s (2x32GB)",
-      "SSD: Samsung 990 PRO 1TB NVMe Gen4",
-      "Placa-Mãe: Gigabyte Z890 AORUS Elite WIFI7",
-      "Refrigeração: Thermalright FW 240 SE ARGB (Watercooler 240mm)",
-      "Fonte: Rise Mode Zeus 850W Modular 80+ PFC Ativo"
-    ],
-    includedItems: ["Todos os componentes montados e testados"],
-    condition: "Adquirido novo. Todos os componentes novos, montados e funcionando.",
-    price: "R$ 16.500",
-    folder: "desktop_ultra_7",
-    images: ["cpu.jpg", "gpu.jpg", "motherboard.jpg", "ram.jpg", "ssd.jpg", "watercooler.jpg", "psu.jpg"]
-  },
-  {
     id: "mac-mini-m4",
     name: "Mac Mini M4",
-    description: "Computador desktop ultra-compacto e potente. Disponível em duas configurações: apenas o Mac Mini ou kit completo com Dock Ugreen e expansão de SSD.",
+    description: "Computador desktop ultra-compacto e potente. Chip M4 com desempenho excepcional em um form factor minúsculo.",
     specs: [
       "Chip M4 (10 CPUs / 10 GPUs)",
       "Memória RAM: 16GB",
       "Armazenamento: 512GB Interno",
-      "Opcional: +512GB no Dock Ugreen (Total 1TB)",
       "3 Portas Thunderbolt, Ethernet e HDMI"
     ],
-    includedItems: ["Cabo de energia original", "Opcional: Dock Ugreen com SSD 512GB"],
+    includedItems: ["Cabo de energia original"],
     condition: "Adquirido novo. Acabamento em alumínio sem detalhes ou riscos.",
-    price: "R$ 8.200 (ou R$ 9.000 com Dock)",
+    price: "R$ 7.000",
     folder: "mac_mini_m4",
-    images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG", "IMG_2015.JPEG", "IMG_2016.JPEG", "IMG_2017.JPEG", "IMG_2018.JPEG"]
+    images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG"]
   },
   {
     id: "macbook-air-m4-24gb",
@@ -81,7 +62,7 @@ export const products: Product[] = [
     ],
     includedItems: ["Lente Pancake 14-42mm EZ", "Alça", "Bateria", "Carregador"],
     condition: "Adquirido novo. Corpo e dials preservados. OBS: Não acompanha cartão de memória.",
-    price: "R$ 5.200",
+    price: "R$ 4.600",
     folder: "olympus_em10_mark_iv",
     images: ["IMG_2491.JPEG", "IMG_2492.JPEG", "IMG_2493.JPEG", "IMG_2494.JPEG", "IMG_2495.JPEG", "IMG_2496.JPEG"]
   },
@@ -118,7 +99,8 @@ export const products: Product[] = [
     ],
     includedItems: ["Caixa", "Smart Case", "Cabo USB-C original"],
     condition: "Adquirido novo. Malha do arco e almofadas em excelente estado.",
-    price: "R$ 2.800",
+    price: "R$ 1.995",
+    originalPrice: "R$ 2.100",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
   },
@@ -135,7 +117,8 @@ export const products: Product[] = [
     ],
     includedItems: ["Caixa original", "Cabo Lightning (nunca usado)"],
     condition: "Adquirido novo. Em excelente estado de conservação.",
-    price: "R$ 900",
+    price: "R$ 855",
+    originalPrice: "R$ 900",
     folder: "airpods_pro_2",
     images: ["IMG_0237.JPEG", "IMG_0236.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"]
   },

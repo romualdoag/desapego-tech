@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { Product } from '../data/products';
-import { Camera, ExternalLink } from 'lucide-react';
+import { Camera } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -8,66 +8,53 @@ interface ProductCardProps {
 }
 
 export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
-  const mainImage = product.images.length > 0 
+  const mainImage = product.images.length > 0
     ? `${import.meta.env.BASE_URL}images/${product.folder}/${product.images[0]}`
     : null;
 
   return (
-    <div 
-      className={`group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 transition-all duration-300 flex flex-col ${
-        product.sold 
-          ? 'opacity-75 grayscale-[0.5] cursor-default' 
-          : 'hover:shadow-xl cursor-pointer'
-      }`}
-      onClick={() => !product.sold && onClick(product)}
+    <div
+      className="group rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 flex flex-col cursor-pointer transition-all duration-300 hover:border-amber-500/30 hover:shadow-xl hover:shadow-amber-950/30"
+      onClick={() => onClick(product)}
     >
-      <div className="aspect-square overflow-hidden bg-zinc-100 dark:bg-zinc-800 relative">
+      <div className="aspect-square overflow-hidden bg-zinc-800 relative">
         {mainImage ? (
-          <img 
-            src={mainImage} 
+          <img
+            src={mainImage}
             alt={product.name}
-            className={`w-full h-full object-cover transition-transform duration-500 ${!product.sold && 'group-hover:scale-105'}`}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-zinc-400">
-            <Camera size={48} />
-          </div>
-        )}
-        
-        {product.sold ? (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="bg-red-600/90 text-white font-black text-2xl px-8 py-2 rotate-[-15deg] shadow-lg border-2 border-white/20 backdrop-blur-sm uppercase tracking-widest">
-              Vendido
-            </div>
-          </div>
-        ) : (
-          <div className="absolute top-4 right-4">
-            <span className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium shadow-sm border border-zinc-200 dark:border-zinc-700">
-              {product.price}
-            </span>
+          <div className="w-full h-full flex items-center justify-center text-zinc-700">
+            <Camera size={40} strokeWidth={1.5} />
           </div>
         )}
       </div>
-      
-      <div className="p-5 flex-1 flex flex-col">
-        <h3 className={`text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1 transition-colors ${!product.sold && 'group-hover:text-blue-600 dark:group-hover:text-blue-400'}`}>
+
+      <div className="p-4 flex-1 flex flex-col">
+        <h3 className="font-display font-bold text-zinc-100 text-sm leading-snug mb-1.5 transition-colors group-hover:text-amber-400">
           {product.name}
         </h3>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 line-clamp-2 mb-4">
+        <p className="text-xs text-zinc-600 line-clamp-2 flex-1 leading-relaxed">
           {product.description}
         </p>
-        
-        {!product.sold && (
-          <div className="mt-auto flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-            Ver detalhes
-            <ExternalLink size={14} className="ml-1.5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-0.5" />
+
+        <div className="mt-3 pt-3 border-t border-zinc-800 flex items-center justify-between gap-2">
+          <div className="flex flex-col leading-tight">
+            <div className="flex items-center gap-2">
+              <span className="font-display font-bold text-amber-400 text-sm">{product.price}</span>
+              {product.originalPrice && (
+                <span className="font-display font-bold text-[10px] bg-amber-400 text-zinc-950 px-1.5 py-0.5 rounded">5% OFF</span>
+              )}
+            </div>
+            {product.originalPrice && (
+              <span className="text-zinc-700 text-[11px] line-through">{product.originalPrice}</span>
+            )}
           </div>
-        )}
-        {product.sold && (
-          <div className="mt-auto text-sm font-medium text-zinc-400 dark:text-zinc-600">
-            Indisponível
-          </div>
-        )}
+          <span className="text-zinc-700 text-xs group-hover:text-zinc-400 transition-colors shrink-0">
+            ver mais →
+          </span>
+        </div>
       </div>
     </div>
   );
