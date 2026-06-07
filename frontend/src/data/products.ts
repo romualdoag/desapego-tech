@@ -124,7 +124,8 @@ export const products: Product[] = [
     price: "R$ 855",
     originalPrice: "R$ 900",
     folder: "airpods_pro_2",
-    images: ["IMG_0237.JPEG", "IMG_0236.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"]
+    images: ["IMG_0237.JPEG", "IMG_0236.JPEG", "IMG_0238.PNG", "IMG_0239.JPEG", "IMG_2502.JPEG", "IMG_2503.JPEG", "IMG_2504.JPEG", "IMG_2505.JPEG", "IMG_2506.JPEG", "IMG_2507.JPEG"],
+    sold: true
   },
   {
     id: "dell-dockstation-wd19",
