@@ -27,6 +27,7 @@ export const products: Product[] = [
     includedItems: ["Cabo de energia original"],
     condition: "Adquirido novo. Acabamento em alumínio sem detalhes ou riscos.",
     price: "R$ 6.000",
+    mercadoLivreUrl: "https://www.mercadolivre.com.br/mac-mini-chip-m4-16gb-ram-256gb-ssd/up/MLBU4051963313",
     folder: "mac_mini_m4",
     images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG"]
   },
@@ -65,6 +66,7 @@ export const products: Product[] = [
     includedItems: ["Lente Pancake 14-42mm EZ", "Alça", "Bateria", "Carregador"],
     condition: "Adquirido novo. Corpo e dials preservados. OBS: Não acompanha cartão de memória.",
     price: "R$ 4.600",
+    mercadoLivreUrl: "https://www.mercadolivre.com.br/camera-olympus-omd-em10-mark-iv-prateada-com-lente-1442mm/up/MLBU4051954125",
     folder: "olympus_em10_mark_iv",
     images: ["IMG_2491.JPEG", "IMG_2492.JPEG", "IMG_2493.JPEG", "IMG_2494.JPEG", "IMG_2495.JPEG", "IMG_2496.JPEG"]
   },
