@@ -7,6 +7,7 @@ export interface Product {
   condition: string;
   price: string;
   originalPrice?: string;
+  mercadoLivreUrl?: string;
   folder: string;
   images: string[];
   sold?: boolean;
@@ -46,6 +47,7 @@ export const products: Product[] = [
     includedItems: ["Carregador original (Padrão US)", "Cabo USB-C original", "Capa TPU Rígida", "Bolsa de transporte"],
     condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
     price: "R$ 8.800",
+    mercadoLivreUrl: "https://www.mercadolivre.com.br/macbook-air-m4--24gb-ram--512gb--136---midnight-blue/up/MLBU4051950283?pdp_filters=item_id:MLB4746710865",
     folder: "macbook_air_m4_24gb",
     images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"]
   },

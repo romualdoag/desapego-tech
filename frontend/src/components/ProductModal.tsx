@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import type { Product } from '../data/products';
-import { X, ChevronLeft, ChevronRight, CheckCircle2, Info, Camera, MessageCircle } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, CheckCircle2, Info, Camera, MessageCircle, ExternalLink } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -168,7 +168,7 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-zinc-800">
+          <div className="mt-8 pt-6 border-t border-zinc-800 flex flex-col gap-3">
             <button
               onClick={handleWhatsAppContact}
               className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-display font-bold py-4 px-6 rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
@@ -176,6 +176,17 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
               <MessageCircle size={18} />
               Tenho Interesse via WhatsApp
             </button>
+            {product.mercadoLivreUrl && (
+              <a
+                href={product.mercadoLivreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-500/40 text-zinc-300 hover:text-amber-400 font-display font-bold py-3.5 px-6 rounded-2xl transition-all text-sm"
+              >
+                <ExternalLink size={15} />
+                Ver anúncio no Mercado Livre
+              </a>
+            )}
           </div>
         </div>
       </div>
