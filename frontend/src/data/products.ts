@@ -21,7 +21,7 @@ export const products: Product[] = [
     specs: [
       "Chip M4 (10 CPUs / 10 GPUs)",
       "Memória RAM: 16GB",
-      "Armazenamento: 512GB Interno",
+      "Armazenamento: 256GB Interno",
       "3 Portas Thunderbolt, Ethernet e HDMI"
     ],
     includedItems: ["Cabo de energia original"],
