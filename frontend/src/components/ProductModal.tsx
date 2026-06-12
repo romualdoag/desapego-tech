@@ -187,6 +187,17 @@ export const ProductModal = ({ product, onClose }: ProductModalProps) => {
                 Ver anúncio no Mercado Livre
               </a>
             )}
+            {product.olxUrl && (
+              <a
+                href={product.olxUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-amber-500/40 text-zinc-300 hover:text-amber-400 font-display font-bold py-3.5 px-6 rounded-2xl transition-all text-sm"
+              >
+                <ExternalLink size={15} />
+                Ver anúncio na OLX
+              </a>
+            )}
           </div>
         </div>
       </div>

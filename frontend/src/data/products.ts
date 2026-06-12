@@ -8,6 +8,7 @@ export interface Product {
   price: string;
   originalPrice?: string;
   mercadoLivreUrl?: string;
+  olxUrl?: string;
   folder: string;
   images: string[];
   sold?: boolean;
@@ -28,6 +29,7 @@ export const products: Product[] = [
     condition: "Adquirido novo. Acabamento em alumínio sem detalhes ou riscos.",
     price: "R$ 6.000",
     mercadoLivreUrl: "https://www.mercadolivre.com.br/mac-mini-chip-m4-16gb-ram-256gb-ssd/up/MLBU4051963313",
+    olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/informatica/computadores-e-desktops/mac-mini-m4-1509985686",
     folder: "mac_mini_m4",
     images: ["IMG_2011.JPEG", "IMG_2012.JPEG", "IMG_2013.JPEG", "IMG_2014.JPEG"]
   },
@@ -49,6 +51,7 @@ export const products: Product[] = [
     condition: "Pouco usado, estado de novo. Sem marcas ou riscos. Não acompanha caixa.",
     price: "R$ 8.800",
     mercadoLivreUrl: "https://www.mercadolivre.com.br/macbook-air-m4--24gb-ram--512gb--136---midnight-blue/up/MLBU4051950283?pdp_filters=item_id:MLB4746710865",
+    olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/informatica/notebooks/macbook-air-m4-24gb-ram-1509985122",
     folder: "macbook_air_m4_24gb",
     images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"]
   },
@@ -67,6 +70,7 @@ export const products: Product[] = [
     condition: "Adquirido novo. Corpo e dials preservados. OBS: Não acompanha cartão de memória.",
     price: "R$ 4.600",
     mercadoLivreUrl: "https://www.mercadolivre.com.br/camera-olympus-omd-em10-mark-iv-prateada-com-lente-1442mm/up/MLBU4051954125",
+    olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/cameras-e-filmadoras/olympus-e-m10-mark-iv-1509986055",
     folder: "olympus_em10_mark_iv",
     images: ["IMG_2491.JPEG", "IMG_2492.JPEG", "IMG_2493.JPEG", "IMG_2494.JPEG", "IMG_2495.JPEG", "IMG_2496.JPEG"]
   },
@@ -106,6 +110,7 @@ export const products: Product[] = [
     price: "R$ 1.995",
     originalPrice: "R$ 2.100",
     mercadoLivreUrl: "https://www.mercadolivre.com.br/apple-airpods-max--meianoite/up/MLBU4052042469?pdp_filters=item_id:MLB6917158702",
+    olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/audio/fones-de-ouvido/airpods-max-usb-c-1509986544",
     folder: "airpods_max",
     images: ["IMG_2480.JPEG", "IMG_2481.JPEG", "IMG_2482.JPEG", "IMG_2483.JPEG", "IMG_2484.JPEG", "IMG_2485.JPEG", "IMG_2486.JPEG"]
   },
@@ -142,6 +147,7 @@ export const products: Product[] = [
     condition: "Adquirido novo. Estrutura preservada e funcional.",
     price: "R$ 500",
     mercadoLivreUrl: "https://www.mercadolivre.com.br/dock-station-dell-c-fonte-wd19--180w/up/MLBU4066519104",
+    olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/informatica/perifericos-de-computador/dell-dock-station-wd19-1509986889",
     folder: "dell_dockstation_wd19",
     images: ["IMG_2209.JPEG", "IMG_2210.JPEG", "IMG_2211.JPEG", "IMG_2212.JPEG", "IMG_2213.JPEG", "IMG_2214.JPEG", "IMG_2215.JPEG"]
   },
