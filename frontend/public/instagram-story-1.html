@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Story 01 — Desapego Tech</title>
+    <title>Instagram Story — Desapego Tech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -179,11 +179,11 @@
             margin-top: 8px;
         }
 
-        /* Small cards row */
+        /* Small cards row — 3 columns */
         .small-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
             flex: 1;
         }
 
@@ -191,7 +191,7 @@
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 44px;
-            padding: 36px 28px 32px;
+            padding: 28px 18px 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -199,34 +199,34 @@
         }
 
         .product-image {
-            width: 280px;
-            height: 280px;
-            border-radius: 32px;
+            width: 210px;
+            height: 210px;
+            border-radius: 28px;
             object-fit: cover;
-            margin-bottom: 24px;
-            box-shadow: 0 24px 48px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
         }
 
         .product-name {
             font-family: 'Syne', sans-serif;
             font-weight: 700;
-            font-size: 34px;
+            font-size: 28px;
             color: #fafaf9;
             line-height: 1.1;
             margin-bottom: 6px;
         }
 
         .product-spec {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 500;
             color: #52525b;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .product-price {
             font-family: 'Syne', sans-serif;
             font-weight: 800;
-            font-size: 40px;
+            font-size: 34px;
             letter-spacing: -0.02em;
             color: #fbbf24;
         }
@@ -235,11 +235,11 @@
         .footer-zone {
             position: relative;
             z-index: 10;
-            padding: 36px 80px 72px;
+            padding: 28px 80px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
             flex-shrink: 0;
         }
 
@@ -271,16 +271,12 @@
             color: rgba(255,255,255,0.08);
         }
 
-        .page-counter {
-            position: absolute;
-            top: 64px;
-            right: 80px;
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 28px;
-            letter-spacing: 0.08em;
-            color: rgba(255,255,255,0.2);
-            z-index: 20;
+        .marketplace-note {
+            font-size: 20px;
+            font-weight: 400;
+            color: #3f3f46;
+            text-align: center;
+            letter-spacing: 0.04em;
         }
     </style>
 </head>
@@ -289,7 +285,6 @@
 <div class="story-canvas">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
-    <div class="page-counter">01 / 02</div>
 
     <div class="header-zone">
         <div class="page-badge">
@@ -315,7 +310,7 @@
             </div>
         </div>
 
-        <!-- Small row -->
+        <!-- 3 small cards -->
         <div class="small-row">
             <div class="product-card">
                 <img src="https://romualdoag.github.io/desapego-tech/images/mac_mini_m4/IMG_2011.JPEG" class="product-image" alt="Mac Mini M4">
@@ -329,6 +324,12 @@
                 <p class="product-spec">Lente 14-42mm EZ</p>
                 <p class="product-price">R$ 4.600</p>
             </div>
+            <div class="product-card">
+                <img src="https://romualdoag.github.io/desapego-tech/images/airpods_max/IMG_2480.JPEG" class="product-image" alt="AirPods Max">
+                <p class="product-name">AirPods Max</p>
+                <p class="product-spec">USB-C · Midnight</p>
+                <p class="product-price">R$ 1.995</p>
+            </div>
         </div>
     </div>
 
@@ -337,6 +338,7 @@
         <div class="link-area">
             <span>Área do Link</span>
         </div>
+        <p class="marketplace-note">Anúncios no Mercado Livre e OLX · links disponíveis no site</p>
     </div>
 </div>
 
