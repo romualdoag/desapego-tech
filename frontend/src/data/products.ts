@@ -53,7 +53,8 @@ export const products: Product[] = [
     mercadoLivreUrl: "https://www.mercadolivre.com.br/macbook-air-m4--24gb-ram--512gb--136---midnight-blue/up/MLBU4051950283?pdp_filters=item_id:MLB4746710865",
     olxUrl: "https://es.olx.com.br/norte-do-espirito-santo/informatica/notebooks/macbook-air-m4-24gb-ram-1509985122",
     folder: "macbook_air_m4_24gb",
-    images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"]
+    images: ["001.JPEG", "002.JPEG", "003.JPEG", "004.JPEG", "005.jpg", "macbook_air_bateria.jpeg"],
+    sold: true
   },
   {
     id: "olympus-em10-mark-iv",
